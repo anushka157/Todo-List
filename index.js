@@ -4,7 +4,8 @@
 
 // const cannot be reasssigned can not be redclared
 // 'use strict';
-let todoArr = []
+let todoArr = [];
+let updTodoIndex;
 todoArr = JSON.parse(atob(localStorage.getItem('todoList')));
 
 
@@ -70,13 +71,13 @@ function todoInsertion(todoTitle, todoData, i) {
     containerTodo.insertAdjacentHTML('beforeend',
         `<div class="todo-card" id="${'todo-' + i}">
             <p>
-            ${i+1}. ${todoTitle}
+            ${i + 1}. ${todoTitle}
             </p>
             <span>
             ${todoData}
             </span>
              <div class="my-2">
-                <button type="button" class="btn btn-outline-primary btn-sm">Update</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="updateTodo('${i}')" data-bs-toggle="modal" data-bs-target="#todoUpdate">Update</button>
                 <button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteTodo(${i})">Delete</button>
             </div>
         </div>`);
@@ -98,3 +99,39 @@ function deleteAll() {
     localStorage.setItem('todoList', btoa(JSON.stringify(todoArr)));
     showTodo()
 }
+
+
+
+function updateTodo(index) {
+    updTodoIndex = index;
+
+    let todoupdTitle = document.getElementById('todo-upd-title');
+    let todoUpdData = document.getElementById('todo-upd-data');
+
+    todoupdTitle.value = todoArr[index].title
+    todoUpdData.value = todoArr[index].description
+    // todoInsertion()
+}
+
+
+function submitUpdatedTodo() {
+    let todoTitle = document.getElementById('todo-upd-title').value
+    let todoData = document.getElementById('todo-upd-data').value
+
+
+    todoArr[updTodoIndex] = {
+        title: todoTitle,
+        description: todoData
+    }
+
+    // for (let i = 0; i < todoArr.length; i++) {
+
+
+    // }
+    // todoInsertion(todoTitle, todoData, (todoArr.length - 1));
+
+    showTodo();
+    localStorage.setItem('todoList', btoa(JSON.stringify(todoArr)));
+}
+
+

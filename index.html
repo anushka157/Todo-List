@@ -62,7 +62,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Insert Todo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Update Todo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body scrollbar">
@@ -82,7 +82,39 @@
                 </div>
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-primary" onclick="insertTodo()" data-bs-dismiss="modal">Save changes</button>
+                    <button type="button" class="btn btn-primary" onclick="insertTodo()" data-bs-dismiss="modal">Save
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="todoUpdate" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Insert Todo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body scrollbar">
+                    <div>
+                        <label for="todo-upd-title" class="form-label">
+                            Todo Title
+                        </label>
+                        <input type="text" placeholder="Title" id="todo-upd-title" class="form-control">
+                    </div>
+                    <div class="my-2">
+                        <label for="todo-upd-data" class="form-label">
+                            Todo Data
+                        </label>
+                        <textarea name="Todo frame" id="todo-upd-data" cols="30" rows="10" placeholder="Input Your work"
+                            class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-primary" onclick="submitUpdatedTodo()" data-bs-dismiss="modal">Update
+                        changes</button>
                 </div>
             </div>
         </div>
