@@ -1,0 +1,75 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.todo-container {
+    background-image: linear-gradient(to right top, #000000, #3b0825, #690054, #8d0096, #9612eb);
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+}
+
+.todo-head {
+    /* background-color: ; */
+    /* background: rgb(63, 94, 251); */
+    /* background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(238, 64, 99, 1) 100%); */
+}
+
+.todo-head p {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.todo-div {
+    height: 70vh;
+    overflow: auto;
+}
+
+.todo-card {
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+.todo-card p {
+    font-size: 28px;
+}
+
+.todo-foot {
+    position: fixed;
+    bottom: 0;
+    border: 1px solid black;
+    width: 100%;
+    padding: 1rem;
+    background-color: pink;
+
+}
+
+
+
+/* Scrollbar */
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: antiquewhite;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
